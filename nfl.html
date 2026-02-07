@@ -1,0 +1,1794 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The NFL: How Football Became America's $23 Billion Obsession</title>
+    <style>
+        :root {
+            --primary: #013369;
+            --secondary: #D50A0A;
+            --accent: #FFB612;
+            --dark: #101820;
+            --light: #F4F4F4;
+            --text: #2C2C2C;
+            --highlight: rgba(255, 182, 18, 0.15);
+        }
+
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Georgia', 'Times New Roman', serif;
+            line-height: 1.7;
+            color: var(--text);
+            background: var(--light);
+            overflow-x: hidden;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, var(--primary) 0%, var(--dark) 100%);
+            color: white;
+            padding: 8rem 2rem 4rem;
+            text-align: center;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            bottom: 0;
+            background: 
+                repeating-linear-gradient(
+                    0deg,
+                    transparent,
+                    transparent 10px,
+                    rgba(255, 255, 255, 0.03) 10px,
+                    rgba(255, 255, 255, 0.03) 20px
+                );
+            pointer-events: none;
+        }
+
+        .hero-content {
+            max-width: 900px;
+            margin: 0 auto;
+            position: relative;
+            z-index: 1;
+        }
+
+        h1 {
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            font-size: clamp(2.5rem, 8vw, 5rem);
+            font-weight: 900;
+            letter-spacing: -2px;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+            line-height: 1.1;
+            text-shadow: 3px 3px 0 var(--secondary);
+        }
+
+        .subtitle {
+            font-size: clamp(1.2rem, 3vw, 1.8rem);
+            font-weight: 300;
+            opacity: 0.9;
+            margin-bottom: 2rem;
+        }
+
+        .stats-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 2rem;
+            margin-top: 3rem;
+        }
+
+        .stat {
+            text-align: center;
+            padding: 1.5rem;
+            background: rgba(255, 255, 255, 0.1);
+            backdrop-filter: blur(10px);
+            border-radius: 10px;
+            border: 1px solid rgba(255, 255, 255, 0.2);
+        }
+
+        .stat-number {
+            font-family: 'Impact', sans-serif;
+            font-size: 2.5rem;
+            color: var(--accent);
+            display: block;
+            margin-bottom: 0.5rem;
+        }
+
+        .stat-label {
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Navigation */
+        nav {
+            position: sticky;
+            top: 0;
+            background: white;
+            box-shadow: 0 2px 20px rgba(0,0,0,0.1);
+            z-index: 1000;
+            padding: 1rem 0;
+        }
+
+        nav ul {
+            list-style: none;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 2rem;
+        }
+
+        nav a {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 600;
+            font-size: 0.9rem;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            transition: color 0.3s;
+            font-family: 'Arial', sans-serif;
+        }
+
+        nav a:hover {
+            color: var(--secondary);
+        }
+
+        /* Container */
+        .container {
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        .wide-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 4rem 2rem;
+        }
+
+        /* Typography */
+        h2 {
+            font-family: 'Impact', 'Arial Black', sans-serif;
+            font-size: clamp(2rem, 5vw, 3rem);
+            color: var(--primary);
+            margin: 3rem 0 1.5rem;
+            text-transform: uppercase;
+            letter-spacing: -1px;
+        }
+
+        h3 {
+            font-family: 'Arial Black', sans-serif;
+            font-size: clamp(1.3rem, 3vw, 1.8rem);
+            color: var(--dark);
+            margin: 2rem 0 1rem;
+            text-transform: uppercase;
+            letter-spacing: -0.5px;
+        }
+
+        p {
+            margin-bottom: 1.5rem;
+            max-width: 75ch;
+        }
+
+        .intro {
+            font-size: 1.3rem;
+            line-height: 1.6;
+            color: var(--dark);
+            font-weight: 400;
+            border-left: 5px solid var(--accent);
+            padding-left: 2rem;
+            margin: 3rem 0;
+        }
+
+        /* Pull Quotes */
+        .pull-quote {
+            background: var(--highlight);
+            border-left: 5px solid var(--secondary);
+            padding: 2rem;
+            margin: 3rem 0;
+            font-size: 1.4rem;
+            font-style: italic;
+            line-height: 1.5;
+            position: relative;
+        }
+
+        .pull-quote::before {
+            content: '"';
+            font-size: 5rem;
+            color: var(--secondary);
+            opacity: 0.3;
+            position: absolute;
+            top: -1rem;
+            left: 1rem;
+            font-family: Georgia, serif;
+        }
+
+        .quote-attribution {
+            display: block;
+            margin-top: 1rem;
+            font-size: 1rem;
+            font-style: normal;
+            font-weight: 700;
+            color: var(--primary);
+            font-family: 'Arial', sans-serif;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        /* Timeline */
+        .timeline {
+            position: relative;
+            padding: 3rem 0;
+        }
+
+        .timeline::before {
+            content: '';
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 4px;
+            height: 100%;
+            background: var(--accent);
+        }
+
+        .timeline-item {
+            display: flex;
+            margin-bottom: 4rem;
+            position: relative;
+        }
+
+        .timeline-item:nth-child(odd) {
+            flex-direction: row;
+        }
+
+        .timeline-item:nth-child(even) {
+            flex-direction: row-reverse;
+        }
+
+        .timeline-content {
+            flex: 1;
+            background: white;
+            padding: 2rem;
+            border-radius: 10px;
+            box-shadow: 0 5px 25px rgba(0,0,0,0.1);
+            margin: 0 2rem;
+            position: relative;
+        }
+
+        .timeline-date {
+            font-family: 'Impact', sans-serif;
+            font-size: 2rem;
+            color: var(--secondary);
+            margin-bottom: 0.5rem;
+        }
+
+        .timeline-marker {
+            position: absolute;
+            left: 50%;
+            transform: translateX(-50%);
+            width: 20px;
+            height: 20px;
+            background: var(--accent);
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            z-index: 10;
+        }
+
+        /* Character Cards */
+        .character-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 2rem;
+            margin: 3rem 0;
+        }
+
+        .character-card {
+            background: white;
+            border-radius: 15px;
+            overflow: hidden;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+        }
+
+        .character-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 15px 40px rgba(0,0,0,0.2);
+        }
+
+        .character-header {
+            background: linear-gradient(135deg, var(--primary), var(--dark));
+            color: white;
+            padding: 2rem 1.5rem 1.5rem;
+            position: relative;
+        }
+
+        .character-name {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 1.5rem;
+            margin-bottom: 0.5rem;
+        }
+
+        .character-role {
+            font-size: 0.9rem;
+            opacity: 0.9;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+        }
+
+        .character-body {
+            padding: 1.5rem;
+        }
+
+        .character-impact {
+            color: var(--secondary);
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+            font-family: 'Arial', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.85rem;
+            letter-spacing: 1px;
+        }
+
+        /* Visual Timeline */
+        .visual-timeline {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin: 3rem 0;
+        }
+
+        .era {
+            margin-bottom: 3rem;
+            padding-bottom: 2rem;
+            border-bottom: 2px dashed var(--accent);
+        }
+
+        .era:last-child {
+            border-bottom: none;
+        }
+
+        .era-title {
+            font-family: 'Impact', sans-serif;
+            font-size: 1.8rem;
+            color: var(--primary);
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .era-years {
+            font-size: 1.1rem;
+            color: var(--secondary);
+            font-weight: 700;
+            margin-bottom: 1rem;
+        }
+
+        /* Data Visualization */
+        .chart-container {
+            background: white;
+            padding: 3rem;
+            border-radius: 20px;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin: 3rem 0;
+        }
+
+        .bar-chart {
+            display: flex;
+            flex-direction: column;
+            gap: 1.5rem;
+        }
+
+        .bar-item {
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .bar-label {
+            width: 150px;
+            font-weight: 700;
+            font-size: 0.9rem;
+        }
+
+        .bar-wrapper {
+            flex: 1;
+            background: var(--light);
+            border-radius: 5px;
+            height: 30px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .bar-fill {
+            height: 100%;
+            background: linear-gradient(90deg, var(--primary), var(--secondary));
+            display: flex;
+            align-items: center;
+            justify-content: flex-end;
+            padding-right: 1rem;
+            color: white;
+            font-weight: 700;
+            font-size: 0.9rem;
+            transition: width 1s ease-out;
+        }
+
+        /* Comparison Table */
+        .comparison {
+            background: white;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 40px rgba(0,0,0,0.1);
+            margin: 3rem 0;
+        }
+
+        .comparison table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+
+        .comparison th {
+            background: var(--primary);
+            color: white;
+            padding: 1.5rem;
+            text-align: left;
+            font-family: 'Arial Black', sans-serif;
+            text-transform: uppercase;
+            font-size: 0.9rem;
+            letter-spacing: 1px;
+        }
+
+        .comparison td {
+            padding: 1.5rem;
+            border-bottom: 1px solid var(--light);
+        }
+
+        .comparison tr:hover {
+            background: var(--highlight);
+        }
+
+        /* Strategic Playbook */
+        .playbook {
+            background: var(--dark);
+            color: white;
+            padding: 4rem 2rem;
+            margin: 4rem -2rem;
+        }
+
+        .playbook-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+            gap: 2rem;
+            max-width: 1200px;
+            margin: 3rem auto 0;
+        }
+
+        .playbook-card {
+            background: rgba(255,255,255,0.1);
+            backdrop-filter: blur(10px);
+            border: 1px solid rgba(255,255,255,0.2);
+            border-radius: 15px;
+            padding: 2rem;
+            transition: transform 0.3s;
+        }
+
+        .playbook-card:hover {
+            transform: translateY(-5px);
+            background: rgba(255,255,255,0.15);
+        }
+
+        .playbook-number {
+            font-family: 'Impact', sans-serif;
+            font-size: 3rem;
+            color: var(--accent);
+            margin-bottom: 1rem;
+        }
+
+        .playbook-title {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 1.3rem;
+            margin-bottom: 1rem;
+            text-transform: uppercase;
+        }
+
+        .playbook-text {
+            line-height: 1.6;
+            opacity: 0.9;
+        }
+
+        /* Media Impact Section */
+        .media-evolution {
+            background: linear-gradient(135deg, #1a1a1a 0%, #2d2d2d 100%);
+            padding: 4rem 2rem;
+            margin: 4rem -2rem;
+            color: white;
+        }
+
+        .media-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 1px;
+            background: var(--accent);
+            border: 1px solid var(--accent);
+            margin: 3rem 0;
+        }
+
+        .media-item {
+            background: var(--dark);
+            padding: 2rem;
+            text-align: center;
+        }
+
+        .media-year {
+            font-family: 'Impact', sans-serif;
+            font-size: 1.5rem;
+            color: var(--accent);
+            margin-bottom: 0.5rem;
+        }
+
+        .media-deal {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 0.5rem;
+        }
+
+        .media-label {
+            font-size: 0.9rem;
+            opacity: 0.8;
+        }
+
+        /* Updates Section */
+        .update-section {
+            background: linear-gradient(135deg, var(--secondary) 0%, #a00000 100%);
+            color: white;
+            padding: 4rem 2rem;
+            margin: 4rem -2rem;
+        }
+
+        .update-banner {
+            background: rgba(255,255,255,0.1);
+            border: 2px solid rgba(255,255,255,0.3);
+            padding: 2rem;
+            border-radius: 15px;
+            text-align: center;
+            margin-bottom: 3rem;
+        }
+
+        .update-banner h2 {
+            color: white;
+            margin: 0 0 1rem 0;
+        }
+
+        /* Footer */
+        footer {
+            background: var(--dark);
+            color: white;
+            padding: 3rem 2rem;
+            text-align: center;
+        }
+
+        .footer-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+
+        /* Responsive */
+        @media (max-width: 768px) {
+            .timeline::before {
+                left: 30px;
+            }
+
+            .timeline-item:nth-child(odd),
+            .timeline-item:nth-child(even) {
+                flex-direction: row;
+            }
+
+            .timeline-content {
+                margin-left: 60px;
+                margin-right: 0;
+            }
+
+            .timeline-marker {
+                left: 30px;
+            }
+
+            .playbook {
+                margin: 4rem 0;
+            }
+
+            .media-evolution,
+            .update-section {
+                margin: 4rem 0;
+            }
+        }
+
+        /* INTERACTIVE TIMELINE - CORRECTED CSS
+           Fixes: First/Last items getting cut off & mobile responsiveness
+        */
+        .interactive-timeline {
+            background: white;
+            padding: 4rem 0; /* Removed horizontal padding to maximize width */
+            overflow-x: auto;
+            overflow-y: hidden;
+            -webkit-overflow-scrolling: touch; /* Smooth scroll on mobile */
+        }
+
+        .timeline-wrapper {
+            width: 100%; /* Changed max-width to allow full scroll */
+            margin: 0 auto;
+        }
+
+        .timeline-header {
+            text-align: center;
+            margin-bottom: 3rem;
+            padding: 0 2rem;
+        }
+
+        .timeline-header h2 {
+            margin: 0 0 1rem 0;
+        }
+
+        .timeline-header p {
+            color: var(--text);
+            opacity: 0.8;
+            font-size: 1.1rem;
+        }
+
+        .timeline-track {
+            position: relative;
+            height: 400px;
+            min-width: 1000px; /* Reduced min-width slightly */
+            margin: 0 40px; /* Add side margins so dots don't touch screen edges */
+        }
+
+        .timeline-line {
+            position: absolute;
+            top: 200px;
+            left: 0;
+            right: 0;
+            height: 6px;
+            background: linear-gradient(90deg, var(--primary) 0%, var(--secondary) 100%);
+            border-radius: 3px;
+        }
+
+        .timeline-milestone {
+            position: absolute;
+            top: 200px;
+            transform: translateX(-50%);
+            cursor: pointer;
+            transition: all 0.3s ease;
+        }
+
+        .milestone-dot {
+            width: 24px;
+            height: 24px;
+            background: white;
+            border: 4px solid var(--primary);
+            border-radius: 50%;
+            position: relative;
+            z-index: 2;
+            transition: all 0.3s ease;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+        }
+
+        .timeline-milestone:hover .milestone-dot {
+            width: 32px;
+            height: 32px;
+            border-width: 5px;
+            border-color: var(--secondary);
+            box-shadow: 0 4px 16px rgba(213, 10, 10, 0.4);
+            transform: translateY(-4px);
+        }
+
+        .milestone-content {
+            position: absolute;
+            width: 180px; /* Reduced width slightly for better fit */
+            padding: 1.25rem;
+            background: white;
+            border-radius: 12px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.15);
+            opacity: 0;
+            visibility: hidden;
+            transition: all 0.3s ease;
+            z-index: 10;
+            border: 2px solid var(--accent);
+            word-wrap: break-word;
+        }
+
+        /* Standard positioning for middle items */
+        .timeline-milestone:nth-child(odd) .milestone-content {
+            bottom: 50px;
+            left: 50%;
+            transform: translateX(-50%) translateY(10px);
+        }
+
+        .timeline-milestone:nth-child(even) .milestone-content {
+            top: 50px;
+            left: 50%;
+            transform: translateX(-50%) translateY(-10px);
+        }
+
+        /* FIX: Special positioning for the First Item (Origins) */
+        .timeline-milestone:first-of-type .milestone-content {
+            left: -10px; /* Slight offset to align nicely */
+            transform: translateY(10px) !important; /* Override standard translate */
+            text-align: left;
+        }
+
+        /* FIX: Special positioning for the Last Item (2026) */
+        .timeline-milestone:last-of-type .milestone-content {
+            left: auto;
+            right: -10px; /* Slight offset */
+            transform: translateY(-10px) !important; /* Override standard translate */
+            text-align: right;
+        }
+
+        .timeline-milestone:hover .milestone-content {
+            opacity: 1;
+            visibility: visible;
+        }
+
+        /* Hover state for Standard items */
+        .timeline-milestone:nth-child(odd):not(:first-of-type):not(:last-of-type):hover .milestone-content {
+            transform: translateX(-50%) translateY(0);
+        }
+        .timeline-milestone:nth-child(even):not(:first-of-type):not(:last-of-type):hover .milestone-content {
+            transform: translateX(-50%) translateY(0);
+        }
+
+        /* Hover state for First item */
+        .timeline-milestone:first-of-type:hover .milestone-content {
+            transform: translateY(0) !important;
+        }
+
+        /* Hover state for Last item */
+        .timeline-milestone:last-of-type:hover .milestone-content {
+            transform: translateY(0) !important;
+        }
+
+        .milestone-year {
+            font-family: 'Impact', sans-serif;
+            font-size: 1.6rem;
+            color: var(--secondary);
+            margin-bottom: 0.25rem;
+            line-height: 1;
+        }
+
+        .milestone-title {
+            font-family: 'Arial Black', sans-serif;
+            font-size: 0.9rem;
+            color: var(--primary);
+            margin-bottom: 0.5rem;
+            text-transform: uppercase;
+            line-height: 1.2;
+        }
+
+        .milestone-description {
+            font-size: 0.8rem;
+            line-height: 1.4;
+            color: var(--text);
+            margin-bottom: 0.75rem;
+        }
+
+        .milestone-link {
+            display: inline-block;
+            font-size: 0.75rem;
+            color: var(--secondary);
+            text-transform: uppercase;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-decoration: none;
+            border-bottom: 2px solid var(--secondary);
+            padding-bottom: 2px;
+            transition: all 0.2s;
+        }
+
+        .milestone-link:hover {
+            color: var(--primary);
+            border-color: var(--primary);
+        }
+
+        .timeline-era-label {
+            position: absolute;
+            top: 240px;
+            font-size: 0.75rem;
+            color: var(--primary);
+            font-weight: 700;
+            text-transform: uppercase;
+            letter-spacing: 1px;
+            opacity: 0.6;
+            transform: translateX(-50%);
+        }
+
+        /* Responsive timeline adjustments */
+        @media (max-width: 768px) {
+            .timeline-track {
+                min-width: 800px;
+                margin: 0 20px;
+            }
+            
+            .milestone-content {
+                width: 160px;
+                padding: 1rem;
+            }
+            
+            .milestone-year { font-size: 1.4rem; }
+            .milestone-title { font-size: 0.8rem; }
+            .milestone-description { display: none; }
+            .milestone-link { margin-top: 0; }
+        }
+
+        /* Animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .fade-in {
+            animation: fadeInUp 0.8s ease-out;
+        }
+
+        @keyframes pulse {
+            0%, 100% {
+                transform: scale(1);
+            }
+            50% {
+                transform: scale(1.1);
+            }
+        }
+
+        .timeline-milestone:hover .milestone-dot {
+            animation: pulse 0.6s ease-in-out;
+        }
+
+        /* Scroll Progress */
+        .progress-bar {
+            position: fixed;
+            top: 0;
+            left: 0;
+            height: 4px;
+            background: var(--accent);
+            z-index: 9999;
+            transition: width 0.1s;
+        }
+    </style>
+</head>
+<body>
+    <div class="progress-bar" id="progressBar"></div>
+
+    <section class="hero">
+        <div class="hero-content">
+            <h1>The NFL</h1>
+            <p class="subtitle">How a Struggling League Became America's $23 Billion Entertainment Juggernaut</p>
+            
+            <div class="stats-grid">
+                <div class="stat">
+                    <span class="stat-number">$23B</span>
+                    <span class="stat-label">Annual Revenue</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">127M</span>
+                    <span class="stat-label">Super Bowl Viewers</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">76M</span>
+                    <span class="stat-label">Americans Betting on NFL</span>
+                </div>
+                <div class="stat">
+                    <span class="stat-number">$228B</span>
+                    <span class="stat-label">Total Team Valuations</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <nav>
+        <ul>
+            <li><a href="#origins">Origins</a></li>
+            <li><a href="#rozelle">The Rozelle Era</a></li>
+            <li><a href="#merger">The Merger</a></li>
+            <li><a href="#monday-night">Monday Night Revolution</a></li>
+            <li><a href="#modern">Modern Empire</a></li>
+            <li><a href="#playbook">Strategic Playbook</a></li>
+            <li><a href="#updates">2026 Updates</a></li>
+        </ul>
+    </nav>
+
+    <section class="interactive-timeline">
+        <div class="timeline-wrapper">
+            <div class="timeline-header">
+                <h2>The Journey to $23 Billion</h2>
+                <p>Hover over milestones to explore, click to jump to that section</p>
+            </div>
+
+            <div class="timeline-track">
+                <div class="timeline-line"></div>
+                
+                <div class="timeline-milestone" style="left: 2%;">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-year">1869</div>
+                        <div class="milestone-title">Mob Football Begins</div>
+                        <div class="milestone-description">First intercollegiate game at Rutgers. Violent, chaotic, no rules.</div>
+                        <a href="#origins" class="milestone-link">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="timeline-milestone" style="left: 8%;">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-year">1905</div>
+                        <div class="milestone-title">Forward Pass Legalized</div>
+                        <div class="milestone-description">Teddy Roosevelt forces reforms. NCAA created. The forward pass transforms football from violence to ballet.</div>
+                        <a href="#origins" class="milestone-link">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="timeline-milestone" style="left: 15%;">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-year">1920</div>
+                        <div class="milestone-title">NFL Founded</div>
+                        <div class="milestone-description">George Halas brings 14 teams together. Jim Thorpe named first president for legitimacy.</div>
+                        <a href="#origins" class="milestone-link">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="timeline-milestone" style="left: 25%;">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-year">1946</div>
+                        <div class="milestone-title">AAFC Threat</div>
+                        <div class="milestone-description">Rival league forms with Paul Brown's dominant Cleveland Browns. Forces NFL to innovate.</div>
+                        <a href="#origins" class="milestone-link">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="timeline-milestone" style="left: 32%;">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-year">1958</div>
+                        <div class="milestone-title">"Greatest Game Ever"</div>
+                        <div class="milestone-description">Giants vs Colts championship draws 45 million viewers. TV's potential revealed.</div>
+                        <a href="#origins" class="milestone-link">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="timeline-milestone" style="left: 40%;">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-year">1960</div>
+                        <div class="milestone-title">Rozelle Era Begins</div>
+                        <div class="milestone-description">33-year-old Pete Rozelle becomes commissioner. AFL forms with Lamar Hunt. War begins.</div>
+                        <a href="#rozelle" class="milestone-link">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="timeline-milestone" style="left: 47%;">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-year">1961</div>
+                        <div class="milestone-title">Sports Broadcasting Act</div>
+                        <div class="milestone-description">JFK signs antitrust exemption. First national TV deal: $4.65M/year. Hosts White House party.</div>
+                        <a href="#rozelle" class="milestone-link">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="timeline-milestone" style="left: 53%;">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-year">1965</div>
+                        <div class="milestone-title">NFL Films Created</div>
+                        <div class="milestone-description">Ed Sabol's vision becomes reality. High-quality film, slow motion, mythology building.</div>
+                        <a href="#rozelle" class="milestone-link">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="timeline-milestone" style="left: 60%;">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-year">1966</div>
+                        <div class="milestone-title">AFL-NFL Merger</div>
+                        <div class="milestone-description">Al Davis starts war over a kicker. Merger announced. First Super Bowl planned.</div>
+                        <a href="#merger" class="milestone-link">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="timeline-milestone" style="left: 66%;">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-year">1967</div>
+                        <div class="milestone-title">Super Bowl I</div>
+                        <div class="milestone-description">65 million viewers. Broadcast on CBS AND NBC. Stadium only 2/3 full. TV is the product.</div>
+                        <a href="#merger" class="milestone-link">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="timeline-milestone" style="left: 72%;">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-year">1969</div>
+                        <div class="milestone-title">Broadway Joe's Guarantee</div>
+                        <div class="milestone-description">Namath guarantees victory. Jets shock Colts. AFL proves legitimate. Perfect drama.</div>
+                        <a href="#merger" class="milestone-link">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="timeline-milestone" style="left: 78%;">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-year">1970</div>
+                        <div class="milestone-title">Monday Night Football</div>
+                        <div class="milestone-description">Roone Arledge revolutionizes sports TV. 60M viewers. Invented a weekly holiday.</div>
+                        <a href="#monday-night" class="milestone-link">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="timeline-milestone" style="left: 85%;">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-year">1993</div>
+                        <div class="milestone-title">Free Agency & Salary Cap</div>
+                        <div class="milestone-description">Players get 48.8% of revenue. Free agency finally arrives. Modern NFL emerges.</div>
+                        <a href="#modern" class="milestone-link">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="timeline-milestone" style="left: 92%;">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-year">2022</div>
+                        <div class="milestone-title">$112B TV Deal</div>
+                        <div class="milestone-description">10-year rights package across CBS, NBC, Fox, ESPN, Amazon, YouTube. Streaming arrives.</div>
+                        <a href="#modern" class="milestone-link">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="timeline-milestone" style="left: 98%;">
+                    <div class="milestone-dot"></div>
+                    <div class="milestone-content">
+                        <div class="milestone-year">2026</div>
+                        <div class="milestone-title">$23B Empire</div>
+                        <div class="milestone-description">127M Super Bowl viewers. 76M bettors. Taylor Swift effect. Private equity revolution.</div>
+                        <a href="#updates" class="milestone-link">Read More →</a>
+                    </div>
+                </div>
+
+                <div class="timeline-era-label" style="left: 10%;">Origins</div>
+                <div class="timeline-era-label" style="left: 35%;">Survival</div>
+                <div class="timeline-era-label" style="left: 55%;">Rozelle Revolution</div>
+                <div class="timeline-era-label" style="left: 75%;">Media Domination</div>
+                <div class="timeline-era-label" style="left: 92%;">Empire</div>
+            </div>
+        </div>
+    </section>
+
+    <div class="container">
+        <p class="intro">
+            Of the top 100 TV broadcasts aired last year, 82 were NFL games. The Super Bowl is watched by roughly two-thirds of American households. My favorite stat: it's the weekend with the fewest weddings planned of the year. The NFL isn't just a sports league—it's woven into the fabric of American life.
+        </p>
+
+        <p>But this dominance wasn't inevitable. For decades, professional football was considered dirty, immoral entertainment—a profaning of the sacred college game with money. Baseball towered above the sporting landscape "like a colossus, the unquestioned national pastime, the only game that mattered."</p>
+
+        <p>The story of how the NFL overtook baseball, survived multiple existential crises, and became the most valuable media property in America is one of incredible cooperation, bold long-term bets, and a century-long commitment to "league first" thinking that no other sports organization has matched.</p>
+
+        <p>Whether pro football is your favorite pastime or you think it's a societal ill, there's no denying the incredible role it plays in all our lives today. This is the story of how we got here.</p>
+    </div>
+
+    <div class="container" id="origins">
+        <h2>The Violent Birth of American Football</h2>
+        
+        <p>Our story begins not with the NFL, but on November 6th, 1869, on the campus of Rutgers University in New Brunswick, New Jersey. Twenty-five Princeton students traveled up from New Jersey to play a game of "football" against Rutgers—though what they played bore little resemblance to today's game.</p>
+
+        <div class="pull-quote">
+            "This was essentially 'mob football' or 'medieval football'—played for centuries in England. The only goal was for one side to get a ball to a certain spot on the other side. There were no rules. Any number of people could participate. You could do anything up to and including maiming and killing people."
+            <span class="quote-attribution">— From America's Game</span>
+        </div>
+
+        <p>For the next several decades, football spread through elite universities, becoming "an integral part of the college experience, this character building experience." It was also wildly dangerous. In 1905 alone, there were 19 fatalities in intercollegiate football.</p>
+
+        <p>When Theodore Roosevelt Jr.—son of the sitting president—suffered a serious injury at Harvard, President Teddy Roosevelt called a summit in New York City. His message was clear: adopt major changes to make the game safer, or I will outlaw it entirely.</p>
+
+        <h3>The Innovation That Changed Everything</h3>
+
+        <p>The response to Roosevelt's ultimatum would create both the NCAA and transform football forever. The newly formed NCAA instituted three critical changes: they created a neutral zone, abolished dangerous wedge formations, and—most importantly—legalized the forward pass.</p>
+
+        <div class="pull-quote">
+            "This introduced what would become the counterbalancing force to the incredible violence of football, which is the true beauty of watching it. It's a ballet. This is a moment where you hold your breath. The world seems to move slowly."
+            <span class="quote-attribution">— Ben Gilbert, Acquired</span>
+        </div>
+
+        <p>The forward pass transformed football from purely violent spectacle into something with strategic depth and visual poetry. But there was a problem: the game was sacred to the college elite. Professional football—playing for money—was considered not just second-rate but actively <em>immoral</em>.</p>
+
+        <p>This created a paradox that would define the NFL's early decades: they were trying to build a business around a game that most Americans thought shouldn't be commercialized at all.</p>
+    </div>
+
+    <div class="wide-container">
+        <h2>The Architects of America's Game</h2>
+        
+        <div class="character-grid">
+            <div class="character-card">
+                <div class="character-header">
+                    <div class="character-name">George Halas</div>
+                    <div class="character-role">Founder, Chicago Bears</div>
+                </div>
+                <div class="character-body">
+                    <div class="character-impact">The Visionary</div>
+                    <p>The driving force behind forming the NFL in 1920, Halas worked for A.E. Staley's Starch Company with the main duty of organizing the company football team. He saw the potential for professional football to become legitimate.</p>
+                </div>
+            </div>
+
+            <div class="character-card">
+                <div class="character-header">
+                    <div class="character-name">Jim Thorpe</div>
+                    <div class="character-role">First NFL President</div>
+                </div>
+                <div class="character-body">
+                    <div class="character-impact">The Greatest Athlete</div>
+                    <p>Native American athlete who won two gold medals in the 1912 Olympics—including the decathlon on his first attempt. Named first president of the NFL to lend legitimacy. The distance between Thorpe and any other athlete of his era was greater than at any point since.</p>
+                </div>
+            </div>
+
+            <div class="character-card">
+                <div class="character-header">
+                    <div class="character-name">Bert Bell</div>
+                    <div class="character-role">NFL Commissioner, 1946-1959</div>
+                </div>
+                <div class="character-body">
+                    <div class="character-impact">The Strategist</div>
+                    <p>Philadelphia Eagles owner who became commissioner during the existential AAFC crisis. Created the "league first" philosophy, invented the reverse-order draft, and coined the mantra: "On any given Sunday, any team should be able to beat any other team."</p>
+                </div>
+            </div>
+
+            <div class="character-card">
+                <div class="character-header">
+                    <div class="character-name">Pete Rozelle</div>
+                    <div class="character-role">NFL Commissioner, 1960-1989</div>
+                </div>
+                <div class="character-body">
+                    <div class="character-impact">The Transformer</div>
+                    <p>33-year-old former PR intern and Rams GM who became the compromise commissioner candidate. Moved headquarters to New York, secured antitrust exemptions from Congress, negotiated landmark TV deals, created Monday Night Football, and built NFL Films. The architect of modern football.</p>
+                </div>
+            </div>
+
+            <div class="character-card">
+                <div class="character-header">
+                    <div class="character-name">Lamar Hunt</div>
+                    <div class="character-role">AFL Founder, Chiefs Owner</div>
+                </div>
+                <div class="character-body">
+                    <div class="character-impact">The Challenger</div>
+                    <p>Young heir to a Dallas oil fortune who, after being rebuffed by the NFL, founded the rival American Football League. Pioneered league-wide revenue sharing from day one. Even coined the term "Super Bowl" after watching his kid play with a Super Ball toy.</p>
+                </div>
+            </div>
+
+            <div class="character-card">
+                <div class="character-header">
+                    <div class="character-name">Roone Arledge</div>
+                    <div class="character-role">ABC Sports Executive</div>
+                </div>
+                <div class="character-body">
+                    <div class="character-impact">The Producer</div>
+                    <p>Young ABC executive who transformed how America watches sports. Created Monday Night Football as must-watch prime-time entertainment with revolutionary production values: 17 cameras, parabolic microphones, split screens, field-level shots, and a three-man booth that became America's friends.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2 id="rozelle">From Barnstorming to the Brink</h2>
+
+        <div class="visual-timeline">
+            <div class="era">
+                <div class="era-title">The Wilderness Years</div>
+                <div class="era-years">1920-1945</div>
+                <p>The NFL starts with 14 teams. Within five years, all but three have folded—only the Decatur Staleys (Bears), Racine Cardinals, and Green Bay Packers survive. Teams are massively loss-making. Every owner is subsidizing losses purely for love of the game. Baseball is the colossus; pro football is viewed as dirty, second-rate entertainment.</p>
+                <p><strong>Key Event:</strong> The league becomes all-white in the mid-1930s, allegedly at the behest of new owner George Preston Marshall, adopting the same policy as Major League Baseball. This shameful policy wouldn't end until after WWII.</p>
+            </div>
+
+            <div class="era">
+                <div class="era-title">Post-War Opportunity</div>
+                <div class="era-years">1945-1950</div>
+                <p>Returning GIs with disposable income and no Ivy League hang-ups about college football create a new middle-class audience. But the NFL owners drag their feet on expansion—so in 1944, frustrated businessmen form the All-America Football Conference (AAFC) with legendary coach Paul Brown leading the Cleveland Browns.</p>
+                <p><strong>The Crisis:</strong> The Browns draw 60,000 fans to their first home game—more than the Rams did all previous season. Then the NFL's Brooklyn Dodgers owner defects to the AAFC. Existential threat.</p>
+            </div>
+
+            <div class="era">
+                <div class="era-title">The Bell Response</div>
+                <div class="era-years">1946-1959</div>
+                <p>The owners install Bert Bell as commissioner with a mandate: beat the AAFC. Bell's three-part strategy: (1) Expand nationwide including to California, (2) Put out a superior product, (3) Tell America about it. The Rams move to LA and integrate their team to play in the publicly-owned Coliseum—forcing racial integration back into pro football.</p>
+                <p><strong>The Innovation:</strong> Bell creates "stacked scheduling" (weak teams play each other first) and the reverse-order draft. The AAFC folds in 1949, unable to overcome the Browns' dominance making games boring. Only three teams join the NFL: Browns, 49ers, and Colts.</p>
+            </div>
+        </div>
+
+        <h3>The Television Revolution</h3>
+
+        <p>As the 1950s dawned, something extraordinary was happening in American living rooms. TV set sales exploded from 7,000 in 1946 to 172,000 in 1948 to millions by the early '50s. By mid-decade, 25 million American homes had televisions.</p>
+
+        <p>The timing was perfect—or rather, the NFL's competitive struggles had forced them into exactly the right position at exactly the right time. Baseball, dominant and profitable from huge gate revenues, viewed television as a <em>threat</em>. The saying went: "Radio wets the appetite, television satiates it." Baseball fought TV.</p>
+
+        <p>Football, struggling to fill stadiums and desperate for any revenue, embraced it.</p>
+
+        <div class="pull-quote">
+            "The 1958 NFL Championship game—the 'Greatest Game Ever Played' between the Giants and Colts, a sudden-death overtime dramatic win—garnered 45 million TV viewers across the country, including President Eisenhower. This was unprecedented."
+            <span class="quote-attribution">— From the Episode</span>
+        </div>
+
+        <p>There was a huge opportunity for professional football and television. Once again, though, the NFL wasn't the one to fully recognize it. Competition would force their hand.</p>
+    </div>
+
+    <div class="container" id="merger">
+        <h2>The AFL War & The Merger</h2>
+
+        <p>By the late 1950s, the NFL had only 12 teams. Multiple cities and ownership groups wanted in. The NFL owners, a "tight-knit fraternity," were dragging their feet. One frustrated suitor, Lamar Hunt—young heir to a Dallas oil fortune—kept being rebuffed.</p>
+
+        <p>Then, on a plane ride home, Hunt had a revelation: <em>Why do I need the NFL? I've got a list of wealthy people who want football teams. We'll start our own league.</em></p>
+
+        <p>In August 1959, the American Football League was born with eight teams: Dallas Texans (later Kansas City Chiefs), Boston Patriots, Buffalo Bills, Houston Oilers, New York Jets, Denver Broncos, LA Chargers, and Oakland Raiders.</p>
+
+        <h3>The Billion-Dollar Innovation</h3>
+
+        <p>Hunt had been studying both the NFL's "league first" mentality and baseball. He'd met with Branch Rickey, who was trying to start a third baseball league with a radical idea: centrally negotiate one national TV contract and split revenue equally among all teams.</p>
+
+        <p>Baseball laughed him out of the room. Hunt and the AFL ran with it.</p>
+
+        <p>The AFL signed a five-year, $8.5 million deal with ABC—before playing a single game. This was the largest sports TV rights deal in history. More importantly, it established a blueprint that would transform sports business forever.</p>
+
+        <div class="pull-quote">
+            "The AFL took this cast-aside idea from baseball and ran with it: centrally negotiate one national television contract for the entire league and split the revenue completely equally amongst all teams. This is the epitome of the league first mentality."
+            <span class="quote-attribution">— David Rosenthal, Acquired</span>
+        </div>
+
+        <p>Crisis struck the NFL again. Commissioner Bert Bell died suddenly in 1959. After 11 days and 23 votes in a knockdown negotiation, the owners couldn't agree on a new commissioner. All the original qualified candidates were out.</p>
+
+        <p>In desperation, they chose a compromise dark horse: 33-year-old Pete Rozelle, general manager of the Los Angeles Rams and former PR intern.</p>
+
+        <p>It was the most consequential decision in NFL history.</p>
+    </div>
+
+    <div class="container">
+        <h2>The Rozelle Revolution</h2>
+
+        <p>Nobody better embodied 1960s America than Pete Rozelle: young families, suburbs, West Coast, Los Angeles, television, PR, advertising. Within a year of taking office, he completely changed the NFL.</p>
+
+        <p><strong>First:</strong> He moved league headquarters from Philadelphia to New York—to Rockefeller Center, then Park Avenue. Right next to television, media, and Madison Avenue advertising.</p>
+
+        <p><strong>Second:</strong> He contracted the Elias Sports Bureau to create professional statistics distributed to newspapers nationwide. You can't get coverage if you don't make reporters' jobs easy.</p>
+
+        <p><strong>Third:</strong> He cultivated a tight relationship with Sports Illustrated. Over the 1960s, SI became the NFL's major advocate. In 1963—just three years later—SI named Rozelle Sportsman of the Year, the first non-athlete ever so honored. Think about that.</p>
+
+        <p><strong>Fourth:</strong> He hired writers in-house to craft storylines and send them to reporters. Control the narrative.</p>
+
+        <p><strong>Fifth:</strong> He cultivated political relationships and influence. This would pay massive dividends.</p>
+
+        <h3>The $4.65 Million Breakthrough</h3>
+
+        <p>Rozelle convinced all NFL owners to give up their individual TV rights for a collective national deal. Three teams—Cleveland, Pittsburgh, Baltimore—would actually lose money short-term. But they said yes, betting on growing the pie.</p>
+
+        <p>Rozelle negotiated with CBS: two years, $4.65 million per year, to be shared equally among teams. This was 3X the AFL's deal and put each NFL team ahead $1 million before the season even started.</p>
+
+        <p>There was just one problem: the Department of Justice immediately started antitrust proceedings. This was clear monopoly behavior.</p>
+
+        <p>This is where Rozelle's Kennedy relationships paid off. Both President Kennedy and Bobby Kennedy in Congress whipped up support for new legislation: the Sports Broadcasting Act of 1961, specifically exempting national sports contracts from antitrust law.</p>
+
+        <div class="pull-quote">
+            "The day after the bill is passed and signed by John F. Kennedy, he literally hosts a party at the White House for the NFL. Pete Rozelle, all the owners—they are invited to the White House to celebrate this new antitrust exemption because the president wants to watch his football."
+            <span class="quote-attribution">— From the Episode</span>
+        </div>
+
+        <h3>NFL Films: The Birth of Mythology</h3>
+
+        <p>In 1962, a suburban Philadelphia dad named Ed Sabol bid $5,000 for rights to film the NFL championship—10X the previous rate. He'd made home movies of his son's high school games. His pitch to Rozelle: make it like a real Hollywood movie with montages, cuts, professional cinematography, slow motion, sideline cameras.</p>
+
+        <p>Rozelle let him try. The result revolutionized sports content forever.</p>
+
+        <p>Sabol intuitively understood what Rozelle knew: football isn't just about showing what happened—it's about telling a story. It has to be drama, made-for-TV content.</p>
+
+        <p>By 1965, NFL Films became an in-house division. Rozelle's directive: break even, fulfill the mission of promoting the very best of the NFL and creating lore and story. NFL Films would become the largest buyer of Kodak film stock except for the U.S. Army, sending full crews to every single game.</p>
+
+        <p>They created an unbelievable archive that no other sport has. They created mythology.</p>
+    </div>
+
+    <div class="container">
+        <h2>Quarterbacks, Kickers, and Kingmakers</h2>
+
+        <p>By 1966, the AFL-NFL war for college players had spiraled out of control. Rookie contracts hit nearly $1 million—more than veterans made. It was unsustainable.</p>
+
+        <p>Some NFL owners quietly told Rozelle: we can't beat the AFL. This will kill us. We have to merge.</p>
+
+        <p>Rozelle directed Cowboys GM Tex Schramm to secretly negotiate with Lamar Hunt. No notes. Just two men talking for months, while the war raged publicly.</p>
+
+        <p>Meanwhile, the AFL drafted Al Davis—owner, head coach, and GM of the Oakland Raiders—as their new commissioner specifically to "kick ass" for them. One writer noted: "Outside of Oakland, it was not certain where Al Davis would finish in a popularity contest among sharks, the mumps, the income tax, and himself."</p>
+
+        <p>Then the NFL made an unforced error. In May 1966, the New York Giants poached a veteran from the Buffalo Bills. A kicker. <em>A kicker.</em> They started a war over a kicker.</p>
+
+        <p>Al Davis, meeting with the Bills owner when he heard the news, leaned back and smiled: "Well, we just got our merger. Now we're going to go sign all their players and destroy them."</p>
+
+        <p>Davis's first move: sign away the Rams' quarterback. His next move: direct all AFL teams to sign all the NFL's quarterbacks. When Hunt tried to stop this, Davis said: "Of course I need to do this. I know you're working on a merger. I am your best weapon. I am giving you leverage."</p>
+
+        <p>Within days, it was over.</p>
+
+        <h3>The Deal</h3>
+
+        <p>On June 8, 1966, the merger was announced. All AFL teams would join the NFL. They'd add four more cities. There would be a single common draft. Rozelle would remain commissioner.</p>
+
+        <p>And starting that very season, they'd host a new professional football world championship game between the league winners—a game broadcast on both CBS and NBC, with each network paying $1 million for the rights and pledging another $1 million in promotion.</p>
+
+        <p>It would be the largest television event in history.</p>
+
+        <p>Oh, and one more thing: In October 1966, Congress passed another law—signed by President Lyndon Johnson—granting the NFL another antitrust exemption to allow the merger.</p>
+
+        <div class="pull-quote">
+            "Walking up the stairs of the rotunda when the vote looked like a sure thing, Rozelle was ever his usual humble self. 'Congressman Boggs, I don't know how I can ever thank you enough for this.' Boggs stopped and turned: 'What do you mean you don't know how to thank me? New Orleans gets an immediate franchise in the NFL.'"
+            <span class="quote-attribution">— From America's Game</span>
+        </div>
+    </div>
+
+    <div class="wide-container">
+        <h2>The Super Bowl: Invented for Television</h2>
+
+        <p>This was unprecedented: the wholesale invention of a major sporting event specifically for the TV era. Nothing like this had ever happened. The World Series predated TV by decades.</p>
+
+        <p>Rozelle and the NFL didn't just create a game—they architected a <em>television event</em> from scratch.</p>
+
+        <h3>The Formula</h3>
+
+        <ul style="list-style: none; padding: 0; max-width: 75ch;">
+            <li style="padding: 1rem; margin-bottom: 0.5rem; background: white; border-left: 4px solid var(--secondary);">
+                <strong>Media Week:</strong> Deliberately invented by Rozelle. Crazy interviews, press conferences, concerts, experiences—not for the public, but for partners, TV, advertisers, press. Rozelle's directive: make everyone leave saying "This is better than the World Series."
+            </li>
+            <li style="padding: 1rem; margin-bottom: 0.5rem; background: white; border-left: 4px solid var(--secondary);">
+                <strong>The Commissioner's Press Conference:</strong> Held Friday before the Super Bowl, announcing league business to draw attention right before the game.
+            </li>
+            <li style="padding: 1rem; margin-bottom: 0.5rem; background: white; border-left: 4px solid var(--secondary);">
+                <strong>Dual Broadcast:</strong> Both CBS and NBC aired Super Bowl I simultaneously. 79% of American TV. 65 million viewers live.
+            </li>
+            <li style="padding: 1rem; margin-bottom: 0.5rem; background: white; border-left: 4px solid var(--secondary);">
+                <strong>The Stadium:</strong> Only 63,000 of 95,000 seats filled at the LA Coliseum. Didn't matter at all. TV was now the product.
+            </li>
+        </ul>
+
+        <div class="pull-quote">
+            "Largest television event in history. Unprecedented. Groundbreaking. Live in the stadium, only two-thirds attendance. And everybody got rich anyway."
+            <span class="quote-attribution">— From the Episode</span>
+        </div>
+
+        <h3>Super Bowl III: The Perfect Drama</h3>
+
+        <p>The first two Super Bowls saw the Packers destroy the Chiefs, then the Raiders. The narrative: the old NFL was real football; the AFL was fluff.</p>
+
+        <p>Then came Super Bowl III. The Baltimore Colts—Johnny Unitas, 1950s era football—versus the New York Jets and Broadway Joe Namath, the first modern celebrity athlete who appealed equally to men, women, and children.</p>
+
+        <p>Namath wore white cleats when everyone wore black. He wore a mink coat on the sidelines. He starred in movies. He had his own talk show. And during Media Week, he <em>guaranteed</em> an AFL victory. The Colts were 19-point favorites.</p>
+
+        <p>There's a famous photograph of Namath at the pool during Media Week, playbook in his lap, in swim trunks, surrounded by cameras and women staring at him. It was everywhere.</p>
+
+        <p>Then Joe delivered. Huge upset. First AFL victory.</p>
+
+        <p>After the game, Colts owner Carroll Rosenblum came to Rozelle sobbing. Rozelle's response: "This is the best thing that has ever happened to the game and to us."</p>
+
+        <p>He was right. The series ended tied 2-2 between the leagues. Perfect drama leading into the first fully merged season and the first joint TV negotiation.</p>
+
+        <p>The 1970 combined contract: four years, $156 million ($40 million/year). Genius move: they kept both CBS and NBC with separate packages (NFC and AFC). They'd just invented multiple revenue streams from the same content.</p>
+    </div>
+
+    <div class="container" id="monday-night">
+        <h2>Monday Night Football: The Weekly Holiday</h2>
+
+        <p>ABC had been out in the cold since losing the first AFL deal. Rozelle and Roone Arledge started talking. The idea: one single game every week with incredibly high production values, broadcast in prime time on Monday nights.</p>
+
+        <p>This was crazy. Sports were for Sunday afternoons. Prime time was for shows and news and entertainment—real content.</p>
+
+        <p>Rozelle had to offer the package to CBS and NBC first per his agreements. He knew they'd say no—too much to lose from their existing Sunday model. It was a perfect stalking horse.</p>
+
+        <p>ABC came in with an over-the-top bid: $8.5 million per season for exclusive rights to Monday Night Football. The other networks were paying ~$20 million for 15X more content.</p>
+
+        <p>But ABC saw the genius: the smallest amount of content possible distributed to the widest audience possible. One game, nationally broadcast, highest production values.</p>
+
+        <p>The first Monday Night Football game was watched by 60 million U.S. households. Super Bowl level, every week.</p>
+
+        <div class="pull-quote">
+            "They invented a holiday out of nowhere and it's every week."
+            <span class="quote-attribution">— Ben Gilbert, Acquired</span>
+        </div>
+
+        <h3>What Monday Night Football Invented</h3>
+
+        <p>Everything you expect in an NFL broadcast today was pioneered by Monday Night Football:</p>
+
+        <ul style="list-style: none; padding: 0; max-width: 75ch; margin: 2rem 0;">
+            <li style="padding: 0.75rem; margin-bottom: 0.5rem; background: white; border-left: 3px solid var(--accent);">📹 <strong>Cameras at field level</strong> on people's shoulders getting up-close celebration footage</li>
+            <li style="padding: 0.75rem; margin-bottom: 0.5rem; background: white; border-left: 3px solid var(--accent);">📹 <strong>Cameras on the 20-yard lines</strong> for head-on red zone views</li>
+            <li style="padding: 0.75rem; margin-bottom: 0.5rem; background: white; border-left: 3px solid var(--accent);">🎙️ <strong>Three-man booth</strong> with action-oriented commentary</li>
+            <li style="padding: 0.75rem; margin-bottom: 0.5rem; background: white; border-left: 3px solid var(--accent);">⭐ <strong>Howard Cosell</strong> injecting himself into the story as entertainment</li>
+            <li style="padding: 0.75rem; margin-bottom: 0.5rem; background: white; border-left: 3px solid var(--accent);">🎥 <strong>17 cameras</strong> (up from 4 on Sunday games)</li>
+            <li style="padding: 0.75rem; margin-bottom: 0.5rem; background: white; border-left: 3px solid var(--accent);">🎤 <strong>Parabolic microphones</strong> capturing on-field sound</li>
+            <li style="padding: 0.75rem; margin-bottom: 0.5rem; background: white; border-left: 3px solid var(--accent);">📺 <strong>Split screens</strong> showing two angles concurrently</li>
+            <li style="padding: 0.75rem; margin-bottom: 0.5rem; background: white; border-left: 3px solid var(--accent);">🏈 <strong>On-field interviews</strong> and cheerleader shots</li>
+            <li style="padding: 0.75rem; margin-bottom: 0.5rem; background: white; border-left: 3px solid var(--accent);">🎬 <strong>Green screens</strong> and elaborate production</li>
+            <li style="padding: 0.75rem; margin-bottom: 0.5rem; background: white; border-left: 3px solid var(--accent);">🎵 <strong>Theme songs</strong> creating franchise identity</li>
+        </ul>
+
+        <h3>The Highlight Revolution</h3>
+
+        <p>Perhaps most importantly, Monday Night Football created <em>highlights</em>.</p>
+
+        <p>Before MNF, there was no place to watch football highlights. Games were Sundays. No internet, no ESPN, no SportsCenter. But NFL Films was capturing high-quality footage of every game with multiple cameras.</p>
+
+        <p>Between Sunday and Monday, NFL Films would cut highlight reels and get them to whatever city was hosting Monday Night Football. At halftime, Howard Cosell would give commentary—often having never seen the footage—while the reels played.</p>
+
+        <p>For the first time ever, Americans could watch highlights of yesterday's games. This became the predecessor to ESPN as a network and SportsCenter as a program. It would create billions in enterprise value.</p>
+
+        <p>Within 24 hours of games ending across the country, they had produced, transported, and broadcast a professional highlight package. In the 1970s. Incredible.</p>
+    </div>
+
+    <div class="media-evolution" id="modern">
+        <div class="container">
+            <h2 style="color: white; margin-top: 0;">The Exponential Rise of Media Rights</h2>
+            <p style="color: white; opacity: 0.9; font-size: 1.1rem; max-width: 75ch;">
+                From a risky experiment to the most valuable media property in the world, the growth of NFL television rights tells the story of American media itself.
+            </p>
+        </div>
+
+        <div class="media-grid">
+            <div class="media-item">
+                <div class="media-year">1962</div>
+                <div class="media-deal">$4.65M</div>
+                <div class="media-label">Per Year (CBS)</div>
+            </div>
+            <div class="media-item">
+                <div class="media-year">1970</div>
+                <div class="media-deal">$40M</div>
+                <div class="media-label">Per Year (Combined)</div>
+            </div>
+            <div class="media-item">
+                <div class="media-year">1970</div>
+                <div class="media-deal">$8.5M</div>
+                <div class="media-label">Monday Night (ABC)</div>
+            </div>
+            <div class="media-item">
+                <div class="media-year">2022</div>
+                <div class="media-deal">$112B</div>
+                <div class="media-label">10-Year Deal</div>
+            </div>
+        </div>
+
+        <div class="container">
+            <p style="color: white; opacity: 0.9; margin-top: 3rem; font-size: 1.1rem;">
+                That initial $4.65 million per year deal in 1962 would grow 2,500x in nominal terms over 62 years—or 250x after adjusting for inflation. No other media property in history has commanded this kind of sustained pricing power.
+            </p>
+        </div>
+    </div>
+
+    <div class="playbook" id="playbook">
+        <div class="container">
+            <h2 style="color: white; margin-top: 0;">The NFL Strategic Playbook</h2>
+            <p style="color: white; opacity: 0.9; font-size: 1.1rem; max-width: 75ch; margin-bottom: 3rem;">
+                Seven principles that transformed a struggling league into the most valuable sports property in the world.
+            </p>
+
+            <div class="playbook-grid">
+                <div class="playbook-card">
+                    <div class="playbook-number">01</div>
+                    <div class="playbook-title">League First, Team Second</div>
+                    <div class="playbook-text">
+                        "On any given Sunday, any team should be able to beat any other team." Bert Bell's insight: competitive balance is more valuable than any single team's dominance. Revenue sharing, reverse-order draft, stacked scheduling—all designed to maximize drama and minimize predictability.
+                    </div>
+                </div>
+
+                <div class="playbook-card">
+                    <div class="playbook-number">02</div>
+                    <div class="playbook-title">Television Is the Product</div>
+                    <div class="playbook-text">
+                        While baseball fought TV as a threat, the NFL embraced it. The gate was nice, but TV was unlimited scale. By 1977, TV revenue exceeded ticket sales for the first time. Today, 61% of team revenue comes from media rights. The stadium is a content studio.
+                    </div>
+                </div>
+
+                <div class="playbook-card">
+                    <div class="playbook-number">03</div>
+                    <div class="playbook-title">Control the Narrative</div>
+                    <div class="playbook-text">
+                        Rozelle hired writers to craft storylines for reporters. Created NFL Films to build mythology. Cultivated Sports Illustrated. Designed Media Week. Every detail was choreographed. The game on the field is critical, but the story around the game is everything.
+                    </div>
+                </div>
+
+                <div class="playbook-card">
+                    <div class="playbook-number">04</div>
+                    <div class="playbook-title">Make Enemies into Allies</div>
+                    <div class="playbook-text">
+                        The AAFC forced the NFL to expand and integrate. The AFL forced them to embrace television and national deals. Competition repeatedly made them better. When Joe Namath beat the Colts in Super Bowl III, Rozelle said: "This is the best thing that ever happened to us."
+                    </div>
+                </div>
+
+                <div class="playbook-card">
+                    <div class="playbook-number">05</div>
+                    <div class="playbook-title">Resell the Same Content Multiple Times</div>
+                    <div class="playbook-text">
+                        CBS gets NFC. NBC gets AFC. ABC gets Monday Night. Fox gets Thursday. Amazon gets streaming. YouTube TV gets Sunday Ticket. Google gets international. Same games, seven different revenue streams. Then NFL Films resells the footage forever.
+                    </div>
+                </div>
+
+                <div class="playbook-card">
+                    <div class="playbook-number">06</div>
+                    <div class="playbook-title">Get the Government on Your Side</div>
+                    <div class="playbook-text">
+                        Two antitrust exemptions from Congress (1961, 1966). Presidential support from Kennedy and Johnson. Nixon personally calling to demand home games be broadcast. The blackout ban passed by Congress. Politicians wanted to watch football—Rozelle made sure they could.
+                    </div>
+                </div>
+
+                <div class="playbook-card">
+                    <div class="playbook-number">07</div>
+                    <div class="playbook-title">Maximize Value Capture</div>
+                    <div class="playbook-text">
+                        Extractive of networks (wafer-thin margins). Extractive of communities (taxpayer stadiums). Increasingly extractive share from players (though the NFLPA has fought back). When private equity wanted in, the NFL said yes—but took carry on their returns.
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>The NFL Business Today</h2>
+
+        <p>Revenue has grown from $8 billion in 2010 to over $23 billion in 2025. Roger Goodell set that target in 2010 when everyone thought it was absurd. They'll beat it easily.</p>
+
+        <h3>How an NFL Team Makes Money</h3>
+
+        <div class="comparison">
+            <table>
+                <thead>
+                    <tr>
+                        <th>Revenue Source</th>
+                        <th>% of Total</th>
+                        <th>Notes</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>Media Rights</td>
+                        <td>61%</td>
+                        <td>TV, streaming, radio - all shared equally</td>
+                    </tr>
+                    <tr>
+                        <td>General Seating</td>
+                        <td>10%</td>
+                        <td>Regular tickets - local revenue</td>
+                    </tr>
+                    <tr>
+                        <td>Premium Seating</td>
+                        <td>10%</td>
+                        <td>Luxury suites - local, growing fast</td>
+                    </tr>
+                    <tr>
+                        <td>Sponsorship</td>
+                        <td>10%</td>
+                        <td>Mix of national and local deals</td>
+                    </tr>
+                    <tr>
+                        <td>Other</td>
+                        <td>9%</td>
+                        <td>Merchandise, NFL Films, Madden, etc.</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+
+        <p>About two-thirds of any team's revenue comes from shared national sources. The other third is local—and this is where massive disparities appear. The Cowboys made over $1 billion in 2024; the Lions made $450 million. Same shared revenue (~$350M each), wildly different local earnings.</p>
+
+        <p>This growing gap is the biggest threat to the "league first" mentality that built the NFL.</p>
+
+        <h3>Player Compensation</h3>
+
+        <p>In 1993, free agency finally came to the NFL along with a salary cap. Today, players are guaranteed 48.8% of total league revenue—making them essentially partners in the business. But there's a catch: that's calculated on total revenue including local revenue.</p>
+
+        <p>As local revenue grows (now over 30% of total, up from 12% in 1994), small-market teams face a squeeze: paying players based on league-wide averages while generating below-average revenue themselves.</p>
+
+        <div class="pull-quote">
+            "The NFL's share of lips is way higher than its revenue would illustrate. It's an oddly small business for how large a role it plays in our lives. The NFL makes $18 billion. So does General Mills, Adobe, and Halliburton."
+            <span class="quote-attribution">— Ben Gilbert, Acquired</span>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>The Dark Side: CTE and Colin Kaepernick</h2>
+
+        <p>In the 2000s, the truth about CTE (chronic traumatic encephalopathy) became undeniable. Repeated sub-concussive hits cause devastating brain conditions. Symptoms include mental illness, personality changes, and suicide. The NFL settled a billion-dollar lawsuit.</p>
+
+        <p>What made it worse: the NFL knew. They'd been doing research into long-term effects of head trauma since the 1990s, then sat on the data. When they did release findings, they claimed there was "absolutely no provable link, no evidence at all" that football caused long-term brain damage.</p>
+
+        <p>They didn't acknowledge the connection until 2016.</p>
+
+        <div class="pull-quote">
+            "The NFL started doing research into long-term effects of concussions in the '90s. Then they sat on the data. Then when they released it, they claimed there was no link. This was a major, major trust-breaking moment."
+            <span class="quote-attribution">— David Rosenthal, Acquired</span>
+        </div>
+
+        <p>The impact is showing in the data. Among U.S. adults overall, 33% say the NFL is their favorite league. Among Gen Z? Only 23%—with basketball close behind at 19%. The NFL still dominates older demographics, but the trend is concerning.</p>
+
+        <h3>The Kaepernick Debacle</h3>
+
+        <p>In 2016, Colin Kaepernick took a knee during the national anthem to protest police brutality and racial inequality. After that season, he became a free agent. Zero teams signed him. The NFL blackballed him.</p>
+
+        <p>Kaepernick filed a grievance and eventually reached a confidential settlement. But the NFL's handling was a masterclass in what NOT to do. If their goal was to not amplify his protest, they utterly failed. Kaepernick became a national headline for months—an icon of the movement.</p>
+
+        <p>It was emblematic of the NFL not understanding the social media era. They tried command-and-control when the world had shifted to decentralized conversation. The NBA, by contrast, embraced players having platforms and voices—and thrived.</p>
+
+        <p>These controversies haven't hurt the NFL's business yet. Revenues keep growing. Viewership hit all-time highs. But they reveal an aging, increasingly out-of-touch ownership structure—one that may struggle to connect with younger, more diverse audiences.</p>
+    </div>
+
+    <div class="update-section" id="updates">
+        <div class="container">
+            <div class="update-banner">
+                <h2>2026 Update: The Empire Strikes Back</h2>
+                <p style="font-size: 1.2rem; margin: 0;">When we recorded this episode three years ago, we worried the NFL might have peaked. We were wrong. Very wrong.</p>
+            </div>
+
+            <h3 style="color: white;">Viewership: All-Time Highs</h3>
+            <p style="color: white; opacity: 0.9;">
+                The regular season posted its best TV ratings in 36 years: 18.7 million viewers per game (up 10% year-over-year). The Super Bowl drew 127 million viewers—an all-time record, after the previous year also set an all-time record.
+            </p>
+
+            <h3 style="color: white;">Gambling: 76 Million Americans</h3>
+            <p style="color: white; opacity: 0.9;">
+                Three years ago, 46 million Americans bet on the NFL. Today it's 76 million—a 65% increase. Nielsen estimates the indirect impact on the league is $2.3 billion per year. Direct sponsorships from DraftKings, FanDuel, and Caesars add another $200 million annually.
+            </p>
+
+            <h3 style="color: white;">Revenue: Crushing Targets</h3>
+            <p style="color: white; opacity: 0.9;">
+                The league now does over $23 billion per year, up from $18 billion in 2023. They're on track to surpass $25 billion—beating Goodell's 2027 target set back in 2010 when revenue was only $8 billion. The TV contract signed in 2022 is worth $112 billion over 10 years.
+            </p>
+
+            <h3 style="color: white;">Streaming: Finally Working</h3>
+            <p style="color: white; opacity: 0.9;">
+                Thursday Night Football on Amazon Prime averaged 15.33 million viewers—the highest ever for Thursday games in the 20-year history of Thursday Night Football. That's approaching parity with Sunday broadcasts. YouTube got an exclusive international game watched by a global audience. Netflix's Christmas games averaged 30 million viewers.
+            </p>
+
+            <h3 style="color: white;">Taylor Swift: Cultural Supernova</h3>
+            <p style="color: white; opacity: 0.9;">
+                From September 2023 to September 2024, the NFL added 4 million female fans—3.4 million of them Chiefs fans. Super Bowl 58 saw a 24% increase in women 18-24. The Chiefs' fan base went from 50/50 male/female to 57% women, 43% men. The Taylor effect is real, quantifiable, and massive.
+            </p>
+
+            <h3 style="color: white;">Flag Football: Global Growth Engine</h3>
+            <p style="color: white; opacity: 0.9;">
+                The fastest-growing youth sport in America. From 2019-2023, tackle football decreased 5% for youngest age groups; flag football increased 16%. It's growing rapidly internationally. Flag football will be in the Olympics. In 5-10 years, we'll see the first major NFL stars who started in flag football in other countries.
+            </p>
+
+            <h3 style="color: white;">Private Equity: The Masterstroke</h3>
+            <p style="color: white; opacity: 0.9;">
+                In 2024, the NFL allowed four anointed private equity firms to invest up to 10% in franchises as fully silent limited partners. Here's the genius: when those stakes eventually sell, a portion of returns gets skimmed off and distributed equally among all 32 teams.
+            </p>
+            <p style="color: white; opacity: 0.9; font-style: italic; margin-top: 1rem;">
+                "The NFL invented a way to charge carry on investor ownership of franchises. It feels like the ultimate pinnacle of the collective capitalism mindset." — David Rosenthal
+            </p>
+
+            <h3 style="color: white;">Team Valuations: Stratospheric</h3>
+            <p style="color: white; opacity: 0.9;">
+                Average team value: $7.1 billion (up from $4.5B in 2023). Total: $228 billion (up from $140B). The Cowboys are worth $13 billion and generate $630 million in annual operating income. Revenue multiples have expanded from 6.4x five years ago to 10.7x today.
+            </p>
+            <p style="color: white; opacity: 0.9; margin-top: 1rem;">
+                Opening up to private equity—with the NFL taking a cut of returns—has created massive multiple expansion. It's unclear if this is driven by genuine earnings growth expectations or simply by NFL teams being treated like scarce collectibles by billionaires. Probably both.
+            </p>
+        </div>
+    </div>
+
+    <div class="container">
+        <h2>The Lindy Effect</h2>
+
+        <p>Despite CTE. Despite Kaepernick. Despite concerns about Gen Z. Despite international failures. Despite everything we worried about three years ago...</p>
+
+        <p>The NFL is bigger, more valuable, and more culturally relevant than ever.</p>
+
+        <p>Revenue is up 28% in three years. Viewership at all-time highs. Team valuations up 60%. New distribution platforms (streaming, YouTube, Netflix) working better than expected. New revenue streams (gambling, private equity) materializing. Even demographics improving with Taylor Swift bringing millions of young women into the fold.</p>
+
+        <div class="pull-quote">
+            "My bull case is the Lindy effect. I kind of think all this is noise from a business standpoint for the NFL. It's one of the most incredible cornered resources in the world. It's going to be completely fine."
+            <span class="quote-attribution">— David Rosenthal, Acquired</span>
+        </div>
+
+        <p>The NFL has survived and thrived through:</p>
+        <ul style="max-width: 75ch; margin: 2rem 0;">
+            <li>Being considered immoral entertainment (1920s-1940s)</li>
+            <li>Two existential competitive threats (AAFC and AFL)</li>
+            <li>The death of broadcast television (still ongoing)</li>
+            <li>Multiple controversies and trust-breaking moments</li>
+            <li>Demographic shifts and changing cultural attitudes</li>
+        </ul>
+
+        <p>Every time you think the NFL might be vulnerable, they pull another lever. They commoditized distribution. They outsourced all the hard parts. They've avoided building almost any technology. They have virtually no direct relationship with consumers. And yet they keep growing.</p>
+
+        <p>The core insight from 1946 remains true: "On any given Sunday, any team should be able to beat any other team." As long as the games remain dramatic and unpredictable, the flywheel spins.</p>
+
+        <p>Better product → More fan engagement → More TV dollars → Shared equally → Better product.</p>
+
+        <p>One hundred and six years after George Halas gathered owners at that Canton auto showroom, the NFL isn't just America's favorite sport. It's the largest single media property in the world, generating more revenue annually than Marvel, Lucasfilm, or any other entertainment franchise.</p>
+
+        <p>And if history is any guide, anyone betting against them should probably think twice.</p>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p style="font-size: 1.2rem; margin-bottom: 1rem; font-weight: 700;">ARE YOU READY FOR SOME FOOTBALL?</p>
+            <p style="opacity: 0.8; margin-bottom: 2rem;">An interactive business biography based on the Acquired podcast episode on the National Football League.</p>
+            <p style="font-size: 0.9rem; opacity: 0.6;">Original episode: January 2023 | Updated: February 2026</p>
+            <p style="font-size: 0.9rem; opacity: 0.6; margin-top: 1rem;">Research sources: "America's Game" by Michael MacCambridge, Acquired podcast, Forbes, Nielsen, various news sources</p>
+        </div>
+    </footer>
+
+    <script>
+        // Progress bar
+        window.addEventListener('scroll', () => {
+            const winScroll = document.body.scrollTop || document.documentElement.scrollTop;
+            const height = document.documentElement.scrollHeight - document.documentElement.clientHeight;
+            const scrolled = (winScroll / height) * 100;
+            document.getElementById('progressBar').style.width = scrolled + '%';
+        });
+
+        // Smooth scrolling for navigation links
+        document.querySelectorAll('nav a').forEach(anchor => {
+            anchor.addEventListener('click', function (e) {
+                e.preventDefault();
+                const target = document.querySelector(this.getAttribute('href'));
+                if (target) {
+                    target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+                }
+            });
+        });
+
+        // Fade in animation on scroll
+        const observerOptions = {
+            threshold: 0.1,
+            rootMargin: '0px 0px -50px 0px'
+        };
+
+        const observer = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.classList.add('fade-in');
+                }
+            });
+        }, observerOptions);
+
+        // Observe sections for fade-in
+        document.querySelectorAll('.character-card, .timeline-item, .playbook-card').forEach(el => {
+            observer.observe(el);
+        });
+
+        // Animate bar charts when they come into view
+        const chartObserver = new IntersectionObserver((entries) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    entry.target.querySelectorAll('.bar-fill').forEach(bar => {
+                        const width = bar.getAttribute('data-width');
+                        bar.style.width = width;
+                    });
+                }
+            });
+        }, observerOptions);
+
+        document.querySelectorAll('.chart-container').forEach(chart => {
+            chartObserver.observe(chart);
+        });
+    </script>
+</body>
+</html>
